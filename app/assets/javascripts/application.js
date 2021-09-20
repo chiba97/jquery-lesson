@@ -18,7 +18,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){
+$(document).ready(function(){
   $('.jquery').on('click',function(){
     $(this).css('color','red');
   });
@@ -46,7 +46,7 @@ $(function(){
   });
 });
 
-$(function(){
+$(document).ready(function(){
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
     transition : 'fade',
@@ -70,3 +70,9 @@ $(function(){
     hidePrevious : false
   });
 });
+$(document).on("turbolinks:load",function(){
+  $(".top").on("click",function(){
+    $(this).css("color","red");
+  });
+});
+
